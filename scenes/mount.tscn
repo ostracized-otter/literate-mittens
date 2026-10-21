@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b2ddysfxdekl0" path="res://objects/object5.tscn" id="6_076be"]
 [ext_resource type="Texture2D" uid="uid://uvclmt6itonx" path="res://textures/background1.png" id="6_qxm46"]
 [ext_resource type="PackedScene" uid="uid://cwx8uyt0u4r68" path="res://objects/object6.tscn" id="7_de2k1"]
-[ext_resource type="Texture2D" uid="uid://csjsqm8xpdqwm" path="res://icon.svg" id="7_tk38k"]
 [ext_resource type="FontFile" uid="uid://hfyclpdxdono" path="res://textures/digital-7.ttf" id="8_l5tji"]
 [ext_resource type="PackedScene" uid="uid://c7yf4emykiuk3" path="res://objects/object7.tscn" id="8_xb5hv"]
 [ext_resource type="FontFile" uid="uid://cus7uqc2quk2p" path="res://textures/TimeWatchDemoRegular.ttf" id="9_elqhh"]
@@ -21,14 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://rsxhky3kdlic" path="res://objects/object12.tscn" id="13_4qjgc"]
 [ext_resource type="PackedScene" uid="uid://30r8k4eb4uxp" path="res://objects/object13.tscn" id="14_njwyj"]
 [ext_resource type="Texture2D" uid="uid://c0glq7linwdd4" path="res://textures/house.png" id="17_js1m4"]
+[ext_resource type="Texture2D" uid="uid://dmccp0qve5bcw" path="res://textures/ded.png" id="21_r86o3"]
+[ext_resource type="Texture2D" uid="uid://dkiqhvk40fp2g" path="res://textures/end.png" id="22_r86o3"]
 
 [sub_resource type="Curve2D" id="Curve2D_tyau4"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -124, 897, 0, 0, 0, 0, 1299, 903)
 }
 point_count = 2
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y76ta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmt6f"]
 size = Vector2(82, 800)
@@ -126,12 +125,72 @@ texture = ExtResource("10_elqhh")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=605531035]
 visible = false
-offset_left = 353.0
-offset_top = 107.0
-offset_right = 393.0
-offset_bottom = 147.0
-scale = Vector2(13.119398, 13.119398)
-texture = SubResource("PlaceholderTexture2D_y76ta")
+offset_left = 250.0
+offset_top = 106.0
+offset_right = 1050.0
+offset_bottom = 706.0
+scale = Vector2(0.8619325, 0.8619325)
+texture = ExtResource("21_r86o3")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect" unique_id=1185169542]
+visible = false
+layout_mode = 0
+offset_left = 628.8195
+offset_top = 197.23123
+offset_right = 668.8195
+offset_bottom = 266.23123
+theme_override_colors/font_color = Color(0.24126711, 0.24560049, 0.24846846, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=217012658]
+offset_left = 703.0
+offset_top = 58.999996
+offset_right = 743.0
+offset_bottom = 82.0
+scale = Vector2(3.599997, 3.639997)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_l5tji")
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Label" type="Label" parent="CanvasLayer/Label3" unique_id=638730393]
+visible = false
+layout_mode = 0
+offset_left = 30.514704
+offset_top = -0.1838243
+offset_right = 70.51471
+offset_bottom = 22.816175
+scale = Vector2(1.0220588, 1.0220588)
+theme_override_fonts/font = ExtResource("8_l5tji")
+text = "m"
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=69227760]
+offset_left = 739.0
+offset_top = 58.999996
+offset_right = 779.0
+offset_bottom = 82.0
+scale = Vector2(3.599997, 3.639997)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_l5tji")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Label" type="Label" parent="CanvasLayer/Label4" unique_id=304194675]
+visible = false
+layout_mode = 0
+offset_left = 30.514704
+offset_top = -0.1838243
+offset_right = 70.51471
+offset_bottom = 22.816175
+scale = Vector2(1.0220588, 1.0220588)
+theme_override_fonts/font = ExtResource("8_l5tji")
+text = "m"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=2072285100]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1905019933]
 freeze = true
@@ -151,7 +210,9 @@ scroll_offset = Vector2(599, 1156.0001)
 repeat_size = Vector2(0, 3200)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=419778846]
-texture = ExtResource("7_tk38k")
+position = Vector2(0.42504883, -2.6013927)
+scale = Vector2(-0.09341081, 0.15508465)
+texture = ExtResource("22_r86o3")
 
 [connection signal="timeout" from="object_timer" to="." method="_on_object_timer_timeout"]
 [connection signal="end" from="Node2D" to="." method="_on_node_2d_end"]

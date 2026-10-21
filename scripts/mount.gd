@@ -4,6 +4,7 @@ var house = 0
 var height: int = 2797
 var score: int = 0
 var ded = 0
+var objectspeed: int = -600
 @export var objectsc: PackedScene
 @export var objectsc2: PackedScene
 @export var objectsc3: PackedScene
@@ -46,16 +47,30 @@ func _on_score_timer_timeout():
 		$CanvasLayer/Label.position = Vector2(541, 58)
 	if height <= 1000:
 		$CanvasLayer/Label.position = Vector2(523, 59)
+	if height <= 2000:
+		$Parallax2D.autoscroll = Vector2(0,-800)
+		objectspeed = -800
+		$CanvasLayer/Label4.text = str(5)
+	if height <= 1000:
+		$Parallax2D.autoscroll = Vector2(0,-1000)
+		$CanvasLayer/Label4.text = str(0)
+		$CanvasLayer/Label3.text = str(2)
+		objectspeed = -1000
 	if height <= 100:
 		$object_timer.stop()
 	if height <= 0:
 		height = 0
+		$score_timer.stop()
+		$CanvasLayer/Label.hide()
+		$CanvasLayer/Label3.hide()
+		$CanvasLayer/Label4.hide()
+		$CanvasLayer/uiback.hide()
 		$Parallax2D3.autoscroll = Vector2(0,-600)
 		await get_tree().create_timer(1.4).timeout
 		$Parallax2D3.autoscroll = Vector2(0,0)
 		$Parallax2D.autoscroll = Vector2(0,0)
-		$score_timer.stop()
 		await get_tree().create_timer(3).timeout
+		$CanvasLayer/TextureRect2.show()
 		
 		
 	
@@ -106,13 +121,19 @@ func _on_object_timer_timeout():
 	
 
 	
-	object.linear_velocity = Vector2(0, -600)
+	object.linear_velocity = Vector2(0, objectspeed)
 	
 	add_child(object)
 	
 func _on_node_2d_end() -> void:
 	$score_timer.stop()
+	$CanvasLayer/Label.hide()
+	$CanvasLayer/Label3.hide()
+	$CanvasLayer/Label4.hide()
+	$CanvasLayer/uiback.hide()
 	$CanvasLayer/TextureRect.show()
+	$CanvasLayer/TextureRect/Label.text = str(2797 - height)
+	$CanvasLayer/TextureRect/Label.show()
 	ded = 1
 	
 func _process(float) -> void:

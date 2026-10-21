@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bt2l4d2717c6t" path="res://scenes/b_4_mount.gd" id="1_tlmwt"]
 [ext_resource type="Resource" uid="uid://dh1tyj7bb32q0" path="res://scripts/start.dialogue" id="2_llq6q"]
+[ext_resource type="Texture2D" uid="uid://c0glq7linwdd4" path="res://textures/house.png" id="5_llq6q"]
 [ext_resource type="PackedScene" uid="uid://b53gpdvd3pnm4" path="res://objects/pip.tscn" id="5_qa84c"]
 [ext_resource type="Texture2D" uid="uid://uvclmt6itonx" path="res://textures/background1.png" id="6_hp425"]
-[ext_resource type="Texture2D" uid="uid://csjsqm8xpdqwm" path="res://icon.svg" id="7_v27yk"]
 
 [sub_resource type="Curve2D" id="Curve2D_tyau4"]
 _data = {
@@ -40,13 +40,13 @@ repeat_size = Vector2(0, 6400)
 position = Vector2(600, 3200)
 texture = ExtResource("6_hp425")
 
-[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1583913212]
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=220114912]
 repeat_size = Vector2(0, 3200)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=2006918252]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1772160478]
 z_index = 2
-position = Vector2(600.49994, 275)
-scale = Vector2(9.382812, 4.296875)
-texture = ExtResource("7_v27yk")
+position = Vector2(600.49994, 282)
+scale = Vector2(1.0068178, 0.83496886)
+texture = ExtResource("5_llq6q")
 
 [connection signal="timeout" from="object_timer" to="." method="_on_object_timer_timeout"]
