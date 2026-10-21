@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://bndylx68lc3fq"]
+
+[ext_resource type="Script" uid="uid://cwkn14jxoln1t" path="res://scripts/mount.gd" id="1_gkduu"]
+[ext_resource type="PackedScene" uid="uid://q4bvaqou8re6" path="res://objects/object1.tscn" id="2_247ni"]
+[ext_resource type="PackedScene" uid="uid://b53gpdvd3pnm4" path="res://objects/pip.tscn" id="3_tyau4"]
+[ext_resource type="PackedScene" uid="uid://co7xfb8qvwl4j" path="res://objects/object2.tscn" id="3_yki3o"]
+[ext_resource type="PackedScene" uid="uid://dxoddfc4mur4m" path="res://objects/object3.tscn" id="4_qxm46"]
+[ext_resource type="PackedScene" uid="uid://d3385lkuwprfh" path="res://objects/object4.tscn" id="5_veufl"]
+[ext_resource type="PackedScene" uid="uid://b2ddysfxdekl0" path="res://objects/object5.tscn" id="6_076be"]
+[ext_resource type="Texture2D" uid="uid://uvclmt6itonx" path="res://textures/background1.png" id="6_qxm46"]
+[ext_resource type="PackedScene" uid="uid://cwx8uyt0u4r68" path="res://objects/object6.tscn" id="7_de2k1"]
+[ext_resource type="Texture2D" uid="uid://csjsqm8xpdqwm" path="res://icon.svg" id="7_tk38k"]
+[ext_resource type="FontFile" uid="uid://hfyclpdxdono" path="res://textures/digital-7.ttf" id="8_l5tji"]
+[ext_resource type="PackedScene" uid="uid://c7yf4emykiuk3" path="res://objects/object7.tscn" id="8_xb5hv"]
+[ext_resource type="FontFile" uid="uid://cus7uqc2quk2p" path="res://textures/TimeWatchDemoRegular.ttf" id="9_elqhh"]
+[ext_resource type="PackedScene" uid="uid://pjcl1ldjbuum" path="res://objects/object8.tscn" id="9_s4x6n"]
+[ext_resource type="Texture2D" uid="uid://b34pgn8pfvdgx" path="res://textures/watch.png" id="10_elqhh"]
+[ext_resource type="PackedScene" uid="uid://bo6t82u7uh2ou" path="res://objects/object9.tscn" id="10_ixey0"]
+[ext_resource type="PackedScene" uid="uid://d0k2od1o761d0" path="res://objects/object10.tscn" id="11_5vftf"]
+[ext_resource type="PackedScene" uid="uid://b2yev5j6dkixb" path="res://objects/object11.tscn" id="12_o6esv"]
+[ext_resource type="PackedScene" uid="uid://rsxhky3kdlic" path="res://objects/object12.tscn" id="13_4qjgc"]
+[ext_resource type="PackedScene" uid="uid://30r8k4eb4uxp" path="res://objects/object13.tscn" id="14_njwyj"]
+[ext_resource type="Texture2D" uid="uid://c0glq7linwdd4" path="res://textures/house.png" id="17_js1m4"]
+
+[sub_resource type="Curve2D" id="Curve2D_tyau4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -124, 897, 0, 0, 0, 0, 1299, 903)
+}
+point_count = 2
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y76ta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmt6f"]
+size = Vector2(82, 800)
+
+[node name="Node2D" type="Node2D" unique_id=713812203]
+script = ExtResource("1_gkduu")
+objectsc = ExtResource("2_247ni")
+objectsc2 = ExtResource("3_yki3o")
+objectsc3 = ExtResource("4_qxm46")
+objectsc4 = ExtResource("5_veufl")
+objectsc5 = ExtResource("6_076be")
+objectsc6 = ExtResource("7_de2k1")
+objectsc7 = ExtResource("8_xb5hv")
+objectsc8 = ExtResource("9_s4x6n")
+objectsc9 = ExtResource("10_ixey0")
+objectsc10 = ExtResource("11_5vftf")
+objectsc11 = ExtResource("12_o6esv")
+objectsc12 = ExtResource("13_4qjgc")
+objectsc13 = ExtResource("14_njwyj")
+
+[node name="object_timer" type="Timer" parent="." unique_id=514781699]
+wait_time = 0.4
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2028656542]
+curve = SubResource("Curve2D_tyau4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=2022793853]
+position = Vector2(-124, 897)
+rotation = 0.0042164195
+
+[node name="Node2D" parent="." unique_id=540167868 instance=ExtResource("3_tyau4")]
+z_index = 1
+position = Vector2(564, 345)
+
+[node name="score_timer" type="Timer" parent="." unique_id=1094630043]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=241183840]
+repeat_size = Vector2(0, 6400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=879307885]
+position = Vector2(600, 3200)
+texture = ExtResource("6_qxm46")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1583913212]
+repeat_size = Vector2(0, 3200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=2006918252]
+z_index = 2
+position = Vector2(600.49994, 282)
+scale = Vector2(1.0068178, 0.83496886)
+texture = ExtResource("17_js1m4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1565035726]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=159329707]
+offset_left = 523.0
+offset_top = 59.0
+offset_right = 563.0
+offset_bottom = 82.0
+scale = Vector2(3.599997, 3.639997)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_l5tji")
+theme_override_font_sizes/font_size = 16
+text = "2797"
+
+[node name="Label" type="Label" parent="CanvasLayer/Label" unique_id=1368067017]
+visible = false
+layout_mode = 0
+offset_left = 30.514704
+offset_top = -0.1838243
+offset_right = 70.51471
+offset_bottom = 22.816175
+scale = Vector2(1.0220588, 1.0220588)
+theme_override_fonts/font = ExtResource("8_l5tji")
+text = "m"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1452744468]
+visible = false
+offset_left = 544.0
+offset_right = 620.0
+offset_bottom = 49.0
+scale = Vector2(2.3199952, 2.3199952)
+theme_override_fonts/font = ExtResource("9_elqhh")
+text = "Elevation
+"
+
+[node name="uiback" type="TextureRect" parent="CanvasLayer" unique_id=1954712935]
+z_index = -1
+offset_left = 342.0
+offset_top = 1.0
+offset_right = 942.0
+offset_bottom = 201.0
+scale = Vector2(0.8399991, 0.8399991)
+texture = ExtResource("10_elqhh")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=605531035]
+visible = false
+offset_left = 353.0
+offset_top = 107.0
+offset_right = 393.0
+offset_bottom = 147.0
+scale = Vector2(13.119398, 13.119398)
+texture = SubResource("PlaceholderTexture2D_y76ta")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1905019933]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1611408971]
+position = Vector2(-41, 400)
+shape = SubResource("RectangleShape2D_wmt6f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=80377623]
+position = Vector2(1241, 400)
+shape = SubResource("RectangleShape2D_wmt6f")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1438937001]
+z_index = 5
+scale = Vector2(-9.410675, 4.7255335)
+scroll_offset = Vector2(599, 1156.0001)
+repeat_size = Vector2(0, 3200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=419778846]
+texture = ExtResource("7_tk38k")
+
+[connection signal="timeout" from="object_timer" to="." method="_on_object_timer_timeout"]
+[connection signal="end" from="Node2D" to="." method="_on_node_2d_end"]
+[connection signal="timeout" from="score_timer" to="." method="_on_score_timer_timeout"]

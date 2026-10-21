@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://8d2nnrtnrm66"]
+
+[ext_resource type="Script" uid="uid://bt2l4d2717c6t" path="res://scenes/b_4_mount.gd" id="1_tlmwt"]
+[ext_resource type="Resource" uid="uid://dh1tyj7bb32q0" path="res://scripts/start.dialogue" id="2_llq6q"]
+[ext_resource type="PackedScene" uid="uid://b53gpdvd3pnm4" path="res://objects/pip.tscn" id="5_qa84c"]
+[ext_resource type="Texture2D" uid="uid://uvclmt6itonx" path="res://textures/background1.png" id="6_hp425"]
+[ext_resource type="Texture2D" uid="uid://csjsqm8xpdqwm" path="res://icon.svg" id="7_v27yk"]
+
+[sub_resource type="Curve2D" id="Curve2D_tyau4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -124, 897, 0, 0, 0, 0, 1299, 903)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D" unique_id=713812203]
+script = ExtResource("1_tlmwt")
+starttext = ExtResource("2_llq6q")
+
+[node name="object_timer" type="Timer" parent="." unique_id=514781699]
+wait_time = 0.4
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2028656542]
+curve = SubResource("Curve2D_tyau4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=2022793853]
+position = Vector2(-124, 897)
+rotation = 0.0042164195
+
+[node name="Node2D" parent="." unique_id=540167868 instance=ExtResource("5_qa84c")]
+z_index = 1
+position = Vector2(564, 224)
+
+[node name="score_timer" type="Timer" parent="." unique_id=1094630043]
+autostart = true
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=241183840]
+repeat_size = Vector2(0, 6400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=879307885]
+position = Vector2(600, 3200)
+texture = ExtResource("6_hp425")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1583913212]
+repeat_size = Vector2(0, 3200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=2006918252]
+z_index = 2
+position = Vector2(600.49994, 275)
+scale = Vector2(9.382812, 4.296875)
+texture = ExtResource("7_v27yk")
+
+[connection signal="timeout" from="object_timer" to="." method="_on_object_timer_timeout"]

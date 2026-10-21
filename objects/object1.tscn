@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://q4bvaqou8re6"]
+
+[ext_resource type="Script" uid="uid://bmpl38mp336pf" path="res://scripts/object1.gd" id="1_uj27t"]
+[ext_resource type="Texture2D" uid="uid://d0oodrer14jtt" path="res://textures/truck.png" id="2_tlku0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wpg6"]
+size = Vector2(77.777794, 11.397156)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=934686908]
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("1_uj27t")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1583559592]
+z_index = 4
+scale = Vector2(1.6516362, 1.6516362)
+texture = ExtResource("2_tlku0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299489523]
+position = Vector2(7.6293945e-06, 74.436356)
+scale = Vector2(8.324245, 8.324245)
+shape = SubResource("RectangleShape2D_2wpg6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=990183625]

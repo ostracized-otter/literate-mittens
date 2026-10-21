@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d0k2od1o761d0"]
+
+[ext_resource type="Script" uid="uid://bmpl38mp336pf" path="res://scripts/object1.gd" id="1_qrdpy"]
+[ext_resource type="Texture2D" uid="uid://dcrejf3e7t7rp" path="res://textures/ufo.png" id="2_qrdpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wpg6"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=934686908]
+collision_mask = 0
+script = ExtResource("1_qrdpy")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1583559592]
+scale = Vector2(1.3850267, 1.3850267)
+texture = ExtResource("2_qrdpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299489523]
+scale = Vector2(11.719997, 5.0399995)
+shape = SubResource("RectangleShape2D_2wpg6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=990183625]

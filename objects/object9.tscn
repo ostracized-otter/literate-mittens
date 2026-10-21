@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bo6t82u7uh2ou"]
+
+[ext_resource type="Script" uid="uid://bmpl38mp336pf" path="res://scripts/object1.gd" id="1_edkhj"]
+[ext_resource type="Texture2D" uid="uid://o22rqw8386sj" path="res://textures/train.png" id="2_edkhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wpg6"]
+size = Vector2(11.507935, 54.24605)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=934686908]
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("1_edkhj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1583559592]
+z_index = 7
+position = Vector2(0, 339)
+scale = Vector2(1.7189027, 1.7189027)
+texture = ExtResource("2_edkhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1299489523]
+position = Vector2(188, 578)
+scale = Vector2(2.7200007, 2.7200007)
+shape = SubResource("RectangleShape2D_2wpg6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1884037748]
+position = Vector2(-151, 303)
+scale = Vector2(2.7200007, 2.7200007)
+shape = SubResource("RectangleShape2D_2wpg6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=990183625]
