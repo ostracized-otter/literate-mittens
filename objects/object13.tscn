@@ -2,8 +2,43 @@
 
 [ext_resource type="Script" uid="uid://bmpl38mp336pf" path="res://scripts/object1.gd" id="1_ptoqt"]
 [ext_resource type="Texture2D" uid="uid://i6suilk1ykjr" path="res://textures/car.png" id="2_ptoqt"]
+[ext_resource type="Texture2D" uid="uid://chgqt3yxc0ep0" path="res://textures/cara.png" id="3_agihd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wpg6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2qw8"]
+atlas = ExtResource("3_agihd")
+region = Rect2(0, 0, 250, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0auu"]
+atlas = ExtResource("3_agihd")
+region = Rect2(250, 0, 250, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wpg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2qw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0auu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0auu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2qw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2qw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2qw8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=934686908]
 collision_mask = 0
@@ -11,6 +46,7 @@ script = ExtResource("1_ptoqt")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1583559592]
+visible = false
 scale = Vector2(1.7050252, 1.7050252)
 texture = ExtResource("2_ptoqt")
 
@@ -20,3 +56,10 @@ scale = Vector2(10.079999, -3.7799997)
 shape = SubResource("RectangleShape2D_2wpg6")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=990183625]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=659589221]
+position = Vector2(79, 73)
+scale = Vector2(1.6108761, 1.6108761)
+sprite_frames = SubResource("SpriteFrames_2wpg6")
+autoplay = "default"
+frame_progress = 0.7318651

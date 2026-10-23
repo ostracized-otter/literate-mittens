@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://csyv7y3hh0mte"]
+
+[ext_resource type="Script" uid="uid://u037n0ju5bv" path="res://scenes/aftermount.gd" id="1_1i21i"]
+[ext_resource type="Resource" uid="uid://bo5k1ye73pxxp" path="res://scripts/end.dialogue" id="2_bgob3"]
+[ext_resource type="Texture2D" uid="uid://5xdnprdalfxa" path="res://textures/win.png" id="9_bgob3"]
+[ext_resource type="PackedScene" uid="uid://b53gpdvd3pnm4" path="res://objects/pip.tscn" id="15_ue26o"]
+[ext_resource type="Texture2D" uid="uid://uvclmt6itonx" path="res://textures/background1.png" id="16_yucmo"]
+[ext_resource type="Texture2D" uid="uid://c0glq7linwdd4" path="res://textures/house.png" id="17_kvpu4"]
+[ext_resource type="FontFile" uid="uid://hfyclpdxdono" path="res://textures/digital-7.ttf" id="18_ffuh1"]
+[ext_resource type="FontFile" uid="uid://cus7uqc2quk2p" path="res://textures/TimeWatchDemoRegular.ttf" id="19_p6k66"]
+[ext_resource type="Texture2D" uid="uid://b34pgn8pfvdgx" path="res://textures/watch.png" id="20_p0hi0"]
+[ext_resource type="Texture2D" uid="uid://dkiqhvk40fp2g" path="res://textures/end.png" id="22_c541v"]
+
+[sub_resource type="Curve2D" id="Curve2D_tyau4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -124, 897, 0, 0, 0, 0, 1299, 903)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmt6f"]
+size = Vector2(82, 800)
+
+[node name="Node2D" type="Node2D" unique_id=713812203]
+script = ExtResource("1_1i21i")
+starttext = ExtResource("2_bgob3")
+
+[node name="object_timer" type="Timer" parent="." unique_id=514781699]
+wait_time = 0.4
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2028656542]
+curve = SubResource("Curve2D_tyau4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=2022793853]
+position = Vector2(-124, 897)
+rotation = 0.0042164195
+
+[node name="Node2D" parent="." unique_id=540167868 instance=ExtResource("15_ue26o")]
+z_index = 1
+position = Vector2(564, 345)
+
+[node name="score_timer" type="Timer" parent="." unique_id=1094630043]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=241183840]
+repeat_size = Vector2(0, 6400)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=879307885]
+position = Vector2(600, 3200)
+texture = ExtResource("16_yucmo")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1583913212]
+visible = false
+repeat_size = Vector2(0, 3200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=2006918252]
+z_index = 2
+position = Vector2(600.49994, 282)
+scale = Vector2(1.0068178, 0.83496886)
+texture = ExtResource("17_kvpu4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1565035726]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=159329707]
+visible = false
+offset_left = 523.0
+offset_top = 59.0
+offset_right = 563.0
+offset_bottom = 82.0
+scale = Vector2(3.599997, 3.639997)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_ffuh1")
+theme_override_font_sizes/font_size = 16
+text = "2797"
+
+[node name="Label" type="Label" parent="CanvasLayer/Label" unique_id=1368067017]
+visible = false
+layout_mode = 0
+offset_left = 30.514704
+offset_top = -0.1838243
+offset_right = 70.51471
+offset_bottom = 22.816175
+scale = Vector2(1.0220588, 1.0220588)
+theme_override_fonts/font = ExtResource("18_ffuh1")
+text = "m"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1452744468]
+visible = false
+offset_left = 544.0
+offset_right = 620.0
+offset_bottom = 49.0
+scale = Vector2(2.3199952, 2.3199952)
+theme_override_fonts/font = ExtResource("19_p6k66")
+text = "Elevation
+"
+
+[node name="uiback" type="TextureRect" parent="CanvasLayer" unique_id=1954712935]
+visible = false
+z_index = -1
+offset_left = 342.0
+offset_top = 1.0
+offset_right = 942.0
+offset_bottom = 201.0
+scale = Vector2(0.8399991, 0.8399991)
+texture = ExtResource("20_p0hi0")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=605531035]
+visible = false
+offset_left = 194.00002
+offset_top = 76.0
+offset_right = 1194.0
+offset_bottom = 776.0
+scale = Vector2(0.8619325, 0.8619325)
+texture = ExtResource("9_bgob3")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect" unique_id=1185169542]
+visible = false
+layout_mode = 0
+offset_left = 628.8195
+offset_top = 197.23123
+offset_right = 668.8195
+offset_bottom = 266.23123
+theme_override_colors/font_color = Color(0.24126711, 0.24560049, 0.24846846, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=217012658]
+visible = false
+offset_left = 703.0
+offset_top = 58.999996
+offset_right = 743.0
+offset_bottom = 82.0
+scale = Vector2(3.599997, 3.639997)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_ffuh1")
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Label" type="Label" parent="CanvasLayer/Label3" unique_id=638730393]
+visible = false
+layout_mode = 0
+offset_left = 30.514704
+offset_top = -0.1838243
+offset_right = 70.51471
+offset_bottom = 22.816175
+scale = Vector2(1.0220588, 1.0220588)
+theme_override_fonts/font = ExtResource("18_ffuh1")
+text = "m"
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=69227760]
+visible = false
+offset_left = 739.0
+offset_top = 58.999996
+offset_right = 779.0
+offset_bottom = 82.0
+scale = Vector2(3.599997, 3.639997)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_ffuh1")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Label" type="Label" parent="CanvasLayer/Label4" unique_id=304194675]
+visible = false
+layout_mode = 0
+offset_left = 30.514704
+offset_top = -0.1838243
+offset_right = 70.51471
+offset_bottom = 22.816175
+scale = Vector2(1.0220588, 1.0220588)
+theme_override_fonts/font = ExtResource("18_ffuh1")
+text = "m"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=2072285100]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1905019933]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1611408971]
+position = Vector2(-41, 400)
+shape = SubResource("RectangleShape2D_wmt6f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=80377623]
+position = Vector2(1241, 400)
+shape = SubResource("RectangleShape2D_wmt6f")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1438937001]
+z_index = 5
+scale = Vector2(-9.410675, 4.7255335)
+scroll_offset = Vector2(599, -15049)
+repeat_size = Vector2(0, 3200)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=419778846]
+position = Vector2(0.42504883, 16.232458)
+scale = Vector2(-0.12135418, 0.20147744)
+texture = ExtResource("22_c541v")
+
+[connection signal="timeout" from="object_timer" to="." method="_on_object_timer_timeout"]
+[connection signal="end" from="Node2D" to="." method="_on_node_2d_end"]
+[connection signal="timeout" from="score_timer" to="." method="_on_score_timer_timeout"]

@@ -18,6 +18,14 @@ var objectspeed: int = -600
 @export var objectsc11: PackedScene
 @export var objectsc12: PackedScene
 @export var objectsc13: PackedScene
+@export var objectsc14: PackedScene
+@export var objectsc15: PackedScene
+@export var objectsc16: PackedScene
+@export var objectsc17: PackedScene
+@export var objectsc18: PackedScene
+@export var objectsc19: PackedScene
+@export var objectspecial: PackedScene
+
 
 func ouch() -> void:
 	print("end")
@@ -66,20 +74,28 @@ func _on_score_timer_timeout():
 		$CanvasLayer/Label4.hide()
 		$CanvasLayer/uiback.hide()
 		$Parallax2D3.autoscroll = Vector2(0,-600)
-		await get_tree().create_timer(1.4).timeout
+		await get_tree().create_timer(4).timeout
 		$Parallax2D3.autoscroll = Vector2(0,0)
 		$Parallax2D.autoscroll = Vector2(0,0)
 		await get_tree().create_timer(3).timeout
-		$CanvasLayer/TextureRect2.show()
+		get_tree().change_scene_to_file("res://scenes/aftermount.tscn")
 		
 		
 	
 func _on_object_timer_timeout():
-	var obtype: int = randf_range(1,12)
+	var obtype: int = randf_range(1,14)
 	var obtyper1: int = randf_range(1,4)
 	var obtyper2: int = randf_range(1,4)
+	var obtyper3: int = randf_range(1,3)
+	var obtyper4: int = randf_range(1,3)
+	var obtyper5: int = randf_range(1,3)
+	var obtyper6: int = randf_range(1,3)
+	var obtyperspec: int = randf_range(1,2000)
 	var object = objectsc3.instantiate()
-	if obtype == 1:
+	
+	if obtyperspec == 1:
+		object = objectspecial.instantiate()
+	elif obtype == 1:
 		object = objectsc8.instantiate()
 	elif obtype == 2:
 		object = objectsc3.instantiate()
@@ -99,7 +115,10 @@ func _on_object_timer_timeout():
 		object = objectsc12.instantiate()
 	elif obtype == 11:
 		object = objectsc13.instantiate()
-	
+	elif obtype == 12:
+		object = objectsc18.instantiate()
+	#elif obtype == 13:
+		#object = objectsc19.instantiate()
 	
 	
 	
@@ -109,8 +128,17 @@ func _on_object_timer_timeout():
 		object = objectsc.instantiate()
 	elif obtyper1 == 1 and obtyper2 == 1:
 		object = objectsc11.instantiate()
-	
-	
+	elif obtyper3 == 1 and obtyper4 == 1:
+		object = objectsc14.instantiate()
+	elif obtyper3 == 2 and obtyper4 == 2:
+		object = objectsc15.instantiate()
+	elif obtyper3 == 1 and obtyper4 == 2:
+		object = objectsc16.instantiate()
+	elif obtyper3 == 2 and obtyper4 == 1:
+		object = objectsc17.instantiate()
+		
+	elif obtyper5 == 1 and obtyper6 == 1:
+		object = objectsc19.instantiate()
 	var obpos = $Path2D/PathFollow2D
 	obpos.progress_ratio = randf()
 	
@@ -137,5 +165,7 @@ func _on_node_2d_end() -> void:
 	ded = 1
 	
 func _process(float) -> void:
+		if Input.is_action_pressed("esc"):
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 		if Input.is_action_pressed("jump") and ded == 1:
 			get_tree().reload_current_scene()

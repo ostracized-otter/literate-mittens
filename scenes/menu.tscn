@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cw25a148slvxa"]
 
 [ext_resource type="Script" uid="uid://c27g1j5oojitf" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://cpb6t7h43nytn" path="res://textures/title.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://lygmh5v2hex2" path="res://textures/score.png" id="3_con2f"]
 
 [node name="Control" type="Control" unique_id=653875421]
 layout_mode = 3
@@ -14,27 +16,69 @@ script = ExtResource("1_yqeox")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=804543857]
 layout_mode = 0
-offset_left = -4.938285
+offset_left = 272.22244
 offset_top = -7.09878
-offset_right = 54.061714
+offset_right = 354.22244
 offset_bottom = 58.90122
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=429352204]
 layout_mode = 2
-text = "play"
+text = "challenge"
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=69912250]
 layout_mode = 2
-text = "play ??"
+text = "endless"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=347270112]
 layout_mode = 0
-offset_left = -5.2469273
-offset_top = 200.61746
-offset_right = 34.753075
-offset_bottom = 240.61746
+offset_left = -6.172882
+offset_top = -9.259323
+offset_right = 102.82712
+offset_bottom = 30.740677
 scale = Vector2(0.8765441, 0.8765441)
 
 [node name="end" type="Button" parent="VBoxContainer2" unique_id=2007674568]
 layout_mode = 2
 text = "end program"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1501535081]
+light_mask = 0
+z_index = -3
+layout_mode = 0
+offset_left = -9.876561
+offset_top = -13.580268
+offset_right = 3990.1235
+offset_bottom = 2986.4197
+scale = Vector2(0.09270022, 0.08328909)
+mouse_filter = 2
+texture = ExtResource("2_vjb58")
+
+[node name="Label" type="Label" parent="." unique_id=141784501]
+layout_mode = 0
+offset_left = 290.43237
+offset_top = 60.185226
+offset_right = 377.4324
+offset_bottom = 135.18523
+scale = Vector2(0.6728236, 0.3946478)
+text = "^
+High Score:
+"
+
+[node name="Label2" type="Label" parent="." unique_id=475361026]
+layout_mode = 0
+offset_left = 290.741
+offset_top = 80.86425
+offset_right = 357.09906
+offset_bottom = 189.47202
+scale = Vector2(1, 0.46889806)
+text = "0"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1854081609]
+z_index = -1
+layout_mode = 0
+offset_left = 284.5681
+offset_top = 61.111153
+offset_right = 324.5681
+offset_bottom = 101.11115
+scale = Vector2(1.7572098, 1.3692557)
+texture = ExtResource("3_con2f")

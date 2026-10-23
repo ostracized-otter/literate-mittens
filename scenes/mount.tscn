@@ -19,8 +19,15 @@
 [ext_resource type="PackedScene" uid="uid://b2yev5j6dkixb" path="res://objects/object11.tscn" id="12_o6esv"]
 [ext_resource type="PackedScene" uid="uid://rsxhky3kdlic" path="res://objects/object12.tscn" id="13_4qjgc"]
 [ext_resource type="PackedScene" uid="uid://30r8k4eb4uxp" path="res://objects/object13.tscn" id="14_njwyj"]
+[ext_resource type="PackedScene" uid="uid://dj4ga2qvr17hq" path="res://objects/object14.tscn" id="15_j544y"]
+[ext_resource type="PackedScene" uid="uid://ce7cqyh04fimu" path="res://objects/object15.tscn" id="16_43nsq"]
 [ext_resource type="Texture2D" uid="uid://c0glq7linwdd4" path="res://textures/house.png" id="17_js1m4"]
+[ext_resource type="PackedScene" uid="uid://hrsht11qquiu" path="res://objects/object16.tscn" id="17_qalqa"]
+[ext_resource type="PackedScene" uid="uid://biprynyq0sgqy" path="res://objects/object17.tscn" id="18_5cs3m"]
+[ext_resource type="PackedScene" uid="uid://dde3aa8s4j1p0" path="res://objects/object18.tscn" id="19_5cs3m"]
+[ext_resource type="PackedScene" uid="uid://ccunnc0rdniff" path="res://objects/object19.tscn" id="20_tkbhs"]
 [ext_resource type="Texture2D" uid="uid://dmccp0qve5bcw" path="res://textures/ded.png" id="21_r86o3"]
+[ext_resource type="PackedScene" uid="uid://2g8x25quswq7" path="res://objects/objectspecial.tscn" id="21_sqpek"]
 [ext_resource type="Texture2D" uid="uid://dkiqhvk40fp2g" path="res://textures/end.png" id="22_r86o3"]
 
 [sub_resource type="Curve2D" id="Curve2D_tyau4"]
@@ -47,6 +54,13 @@ objectsc10 = ExtResource("11_5vftf")
 objectsc11 = ExtResource("12_o6esv")
 objectsc12 = ExtResource("13_4qjgc")
 objectsc13 = ExtResource("14_njwyj")
+objectsc14 = ExtResource("15_j544y")
+objectsc15 = ExtResource("16_43nsq")
+objectsc16 = ExtResource("17_qalqa")
+objectsc17 = ExtResource("18_5cs3m")
+objectsc18 = ExtResource("19_5cs3m")
+objectsc19 = ExtResource("20_tkbhs")
+objectspecial = ExtResource("21_sqpek")
 
 [node name="object_timer" type="Timer" parent="." unique_id=514781699]
 wait_time = 0.4
@@ -193,6 +207,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1905019933]
+collision_layer = 3
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1611408971]
@@ -206,12 +221,12 @@ shape = SubResource("RectangleShape2D_wmt6f")
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1438937001]
 z_index = 5
 scale = Vector2(-9.410675, 4.7255335)
-scroll_offset = Vector2(599, 1156.0001)
+scroll_offset = Vector2(599, -13565)
 repeat_size = Vector2(0, 3200)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=419778846]
-position = Vector2(0.42504883, -2.6013927)
-scale = Vector2(-0.09341081, 0.15508465)
+position = Vector2(0.42504883, 16.232458)
+scale = Vector2(-0.12135418, 0.20147744)
 texture = ExtResource("22_r86o3")
 
 [connection signal="timeout" from="object_timer" to="." method="_on_object_timer_timeout"]

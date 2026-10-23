@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bo5k1ye73pxxp"
+path="res://.godot/imported/end.dialogue-121d04453ebdbc34b7fcba3377df0e47.tres"
+
+[deps]
+
+source_file="res://scripts/end.dialogue"
+dest_files=["res://.godot/imported/end.dialogue-121d04453ebdbc34b7fcba3377df0e47.tres"]
+
+[params]
+
+defaults=true
